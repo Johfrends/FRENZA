@@ -1,0 +1,405 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #000;
+  color: white;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Sticky inteligente */
+.sticky-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.sticky-header.hide {
+  transform: translateY(-100%);
+}
+
+/* Contenedor de logo y menú */
+.left-header {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* 🔹 Alinea el logo (imagen + texto FRENZA) */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.menu a {
+  margin: 0 18px;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: rgb(144, 144, 144);
+}
+
+.icons a {
+  margin-left: 15px;
+  color: white;
+  font-size: 22px;
+  transition: color 0.3s;
+}
+
+.icons a:hover {
+  color: rgb(144, 144, 144);
+}
+
+/* Slider */
+.slider {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 70px); /* ocupa todo menos el header */
+  overflow: hidden;
+  margin-top: 70px; /* baja el carrusel justo debajo del header */
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+}
+
+.slides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Flechas */
+.slider .prev,
+.slider .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease, background 0.3s ease, transform 0.2s ease;
+  z-index: 10;
+}
+
+.slider .prev { left: 15px; }
+.slider .next { right: 15px; }
+
+.slider:hover .prev,
+.slider:hover .next {
+  opacity: 1;
+}
+
+.slider .prev:hover,
+.slider .next:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: black;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Footer */
+footer {
+  background-color: #000;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 0; /* asegura que no quede hueco arriba */
+}
+
+footer .social p {
+  margin: 0 0 15px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+footer .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+footer .social-icons a {
+  color: white;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+  transform: scale(1.2);
+  color: #f39;
+}
+
+footer .copy p {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.section-title {
+  text-align: center;
+  margin-top: 120px; /* da espacio bajo el header */
+  margin-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.separator {
+  width: 60px;
+  height: 3px;
+  background: #000;
+  margin: 12px auto 0 auto;
+  border-radius: 2px;
+}
+
+/* ========================
+   Catálogo Hombre
+======================== */
+.catalogo {
+  background: #fff;
+  padding: 120px 40px 60px; /* espacio para que no tape el header */
+  text-align: center;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #000;
+  display: inline-block;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #000;
+}
+
+.productos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.producto img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.producto h3 {
+  font-size: 14px;
+  margin-top: 12px;
+  color: #222;
+}
+
+.producto p {
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 5px;
+  color: #444;
+}
+
+/* Título Ropa Hombre arriba */
+.titulo-catalogo {
+  background: #fff;
+  padding: 90px 20px 20px; /* ajusta espacio debajo del header */
+  text-align: center;
+}
+
+.titulo-catalogo h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.titulo-catalogo .separador {
+  width: 90%;            /* ancho sigue cubriendo casi toda la página */
+  height: 1px;           /* más delgado */
+  background: #ccc;      /* gris suave */
+  margin: 0 auto;
+  border-radius: 1px;
+}
+
+/* ========================
+   Hover imagen frontal/trasera
+======================== */
+/* ========================
+   Catálogo Hombre
+======================== */
+.catalogo {
+  background: #fff;
+  padding: 120px 40px 60px; /* espacio para que no tape el header */
+  text-align: center;
+}
+
+.section-title {
+  font-size: 16px;       /* más pequeño */
+  font-weight: bold;
+  margin-bottom: 20px;   /* espacio antes del gran separador */
+  color: #000;
+  display: inline-block;
+}
+
+.separador {
+  border: none;
+  height: 2px;           /* delgada */
+  background-color: #ccc; /* gris suave */
+  width: 90%;            /* largo casi toda la página */
+  margin: 0 auto 40px;   /* centrado y con espacio abajo */
+}
+
+
+.productos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.producto img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.producto h3 {
+  font-size: 14px;
+  margin-top: 12px;
+  color: #222;
+}
+
+.producto p {
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 5px;
+  color: #444;
+}
+
+/* ========================
+   Hover imagen frontal/trasera
+======================== */
+.imagen-hover {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.imagen-hover img {
+  width: 100%;
+  display: block;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.imagen-hover img.trasera {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;  /* invisible inicialmente */
+}
+
+.imagen-hover:hover img.trasera {
+  opacity: 1;  /* se muestra al pasar cursor */
+}
+
+.imagen-hover:hover img.frontal {
+  opacity: 0;  /* frontal desaparece al pasar cursor */
+}
+
+
+.aviso-pro {
+  background: #fff;
+  min-height: calc(100vh - 70px); /* Ocupa toda la pantalla menos header */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centra verticalmente */
+  align-items: center;     /* centra horizontalmente */
+  text-align: center;
+  padding: 20px;
+}
+
+.aviso-pro h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.aviso-pro p {
+  font-size: 18px;
+  color: #555;
+  max-width: 600px; /* limita ancho para mejor lectura */
+  line-height: 1.6;
+}
+
+/* =========================
+   Sección profesional Más
+========================= */
+.aviso-pro {
+  background: #fff;
+  min-height: calc(100vh - 70px); /* ocupa toda la pantalla menos el header */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px; /* espacio lateral */
+}
+
+.aviso-pro h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.aviso-pro p {
+  font-size: 16px;
+  color: #333;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
