@@ -431,3 +431,44 @@ footer .copy p {
     margin-top: 10px;
   }
 }
+
+@media (max-width: 768px) {
+  /* Ajustar el carrusel para móviles */
+  .slides {
+    margin: 0 auto; /* centrado */
+    width: 100%;    /* ocupar todo el ancho disponible */
+  }
+
+  /* Reducir padding del contenedor si es necesario */
+  .catalogo, .productos {
+    padding: 10px 5px;
+  }
+
+  /* Ajuste del header para que no genere espacio extra */
+  .sticky-header {
+    padding: 10px 15px;
+  }
+}
+
+/* Para escritorio ya tienes */
+.producto {
+  width: 400px; /* ancho fijo para ordenador */
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+  .productos {
+    flex-direction: column; /* las camisetas se apilan si quieres */
+    gap: 20px;
+    align-items: center;
+  }
+
+  .producto {
+    width: 90%; /* ancho flexible ocupando la mayoría de la pantalla */
+  }
+
+  .producto img {
+    width: 100%; /* imágenes se ajustan al ancho del producto */
+    height: auto;
+  }
+}
