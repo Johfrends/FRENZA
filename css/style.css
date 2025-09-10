@@ -403,3 +403,31 @@ footer .copy p {
   line-height: 1.5;
 }
 
+/* --- Responsive para móviles --- */
+@media (max-width: 768px) {
+  .slides {
+    height: auto; /* slider se ajusta al alto de la imagen */
+  }
+
+  .slides img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Header se ajusta */
+  .sticky-header .left-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sticky-header nav.menu {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .sticky-header .icons {
+    margin-top: 10px;
+  }
+}

@@ -341,3 +341,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+
+<script>
+  // Header inteligente
+  let lastScroll = 0;
+  const header = document.querySelector('.sticky-header');
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll && currentScroll > 100) {
+      // Bajar → ocultar
+      header.classList.add('hide');
+    } else {
+      // Subir → mostrar
+      header.classList.remove('hide');
+    }
+
+    lastScroll = currentScroll;
+  });
+</script>
+
