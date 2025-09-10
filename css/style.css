@@ -472,3 +472,16 @@ footer .copy p {
     height: auto;
   }
 }
+
+/* Carrusel responsive */
+@media screen and (max-width: 768px) {
+  .slides {
+    width: 100%;        /* ocupar todo el ancho del contenedor */
+    overflow: hidden;   /* evitar scroll horizontal */
+  }
+
+  .slides img {
+    width: 100%;        /* imagenes ocupan todo el ancho del slide */
+    height: auto;       /* mantener proporción */
+  }
+}
