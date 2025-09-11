@@ -485,3 +485,35 @@ footer .copy p {
     height: auto;       /* mantener proporción */
   }
 }
+
+/* Carrusel responsive para celular */
+@media (max-width: 768px) {
+  /* Contenedor del carrusel */
+  .slides {
+    width: 100% !important; /* ocupa todo el ancho */
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* evita scroll horizontal */
+  }
+
+  /* Cada imagen dentro del carrusel */
+  .slides img {
+    width: 100% !important; /* se ajusta al ancho del contenedor */
+    height: auto;
+    display: block;
+  }
+
+  /* Ajuste del contenedor padre si tiene padding */
+  .slider-container,
+  .catalogo {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  /* Opcional: si tienes botones prev/next flotando */
+  .prev,
+  .next {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
