@@ -80,13 +80,13 @@ header {
 }
 
 /* Slider */
-.slider {
-  position: relative;
-  width: 100%;
-  height: calc(100vh - 70px); /* ocupa todo menos el header */
-  overflow: hidden;
-  margin-top: 70px; /* baja el carrusel justo debajo del header */
+@media (max-width: 768px) {
+  .slider {
+    margin-top: 50px; /* o menos, según la altura real de tu header en móviles */
+    height: calc(100vh - 50px); /* ajusta la altura para móviles */
+  }
 }
+
 
 .slides {
   display: flex;
@@ -403,23 +403,8 @@ footer .copy p {
   line-height: 1.5;
 }
 
-/* --- Responsive para móviles --- */
-@media (max-width: 768px) {
-  .slides {
-    height: auto; /* slider se ajusta al alto de la imagen */
-  }
-
-  .slides img {
-    width: 100%;
-    height: auto;
-  }
-
   /* Header se ajusta */
-  .sticky-header .left-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
+ 
   .sticky-header nav.menu {
     margin-top: 10px;
     display: flex;
@@ -430,7 +415,7 @@ footer .copy p {
   .sticky-header .icons {
     margin-top: 10px;
   }
-}
+
 
 @media (max-width: 768px) {
   /* Ajustar el carrusel para móviles */
@@ -517,3 +502,4 @@ footer .copy p {
     transform: translateY(-50%);
   }
 }
+
